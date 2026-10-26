@@ -46,3 +46,28 @@ GitHub repository is public and Pages is enabled in workflow mode with no custom
 domain (`cname: null`). The next commit adds the workflow after Pages enablement.
 No DNS records were changed. Portfolio migration is committed/pushed to its review
 branch at 8345945, with live portfolio main unchanged while DNS is deferred.
+
+## Published and live-verified
+
+Deployment commit: a9e9cd6e1549f19b85ed8f41d7ba76c3a76468ab.
+GitHub Actions run: https://github.com/awaismirza/wordscut-app-web/actions/runs/40323724259
+Build and Deploy to GitHub Pages both completed successfully.
+Live URL: https://awaismirza.github.io/wordscut-app-web/
+
+HTTP checks returned 200 for home, privacy, terms, support and editor-hero.webp.
+Live Chrome checks at 390 and 1440 pass: no page overflow; all product images load;
+gallery opens, actual-size mode works and Escape closes; exactly one canonical;
+all legal/support pages and earlier licence text resolve; no console/page errors.
+Proof: docs/qa/live/hero-390.png, hero-1440.png and results.json.
+Reproduce with node scripts/verify-live.mjs (installed Chrome required).
+The full ten-combination production-preview matrix remains in
+`docs/qa/wordscut-marketing/results.json`.
+
+GitHub Pages has HTTPS enforced, no custom domain and no CNAME. Owner will configure
+DNS later. awaisjamil.com live main was not changed; its prepared migration remains
+on the isolated review branch. No PR, merge, app change, installer/release or DNS
+mutation was performed. This final documentation/verification-evidence commit uses
+[skip ci]; the deployed application code remains exactly the successful SHA above.
+
+Next actions: owner reviews the working Pages URL; later connect wordscut.com using
+the README settings; then publish the prepared portfolio link migration.

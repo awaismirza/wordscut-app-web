@@ -1,0 +1,22 @@
+{
+  "url": "https://awaismirza.github.io/wordscut-app-web/",
+  "results": [
+    {
+      "width": 390,
+      "overflow": false,
+      "images": "loaded",
+      "gallery": "pass",
+      "canonical": "pass"
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "images": "loaded",
+      "gallery": "pass",
+      "canonical": "pass"
+    }
+  ],
+  "legal": "all 200",
+  "legacyLicense": "200",
+  "errors": []
+}
