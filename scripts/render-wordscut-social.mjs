@@ -1,0 +1,6 @@
+import { chromium } from 'playwright'
+const b=await chromium.launch({channel:'chrome',headless:true});const p=await b.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1})
+await p.goto('http://127.0.0.1:5186/products/wordscut')
+await p.setContent(`<style>*{box-sizing:border-box}body{margin:0;background:#0c1020;color:#f4f6fc;font-family:Arial;overflow:hidden}header{display:flex;align-items:center;gap:14px;padding:36px 48px;font-size:25px}header img{width:52px;height:52px}h1{font-size:60px;line-height:1.05;letter-spacing:-3px;margin:15px 0 20px;max-width:530px;font-weight:500}.left{padding:0 0 0 48px;width:540px}p{font-size:21px;line-height:1.5;width:390px;color:#b9c4ff}.editor{position:absolute;width:780px;top:186px;left:555px}</style><header><img src="http://127.0.0.1:5186/wordscut/icon.svg"/>WordsCut</header><div class="left"><h1>Edit the words.<br>Shape the video.</h1><p>Local-first video editing.<br>Made for your Mac.</p></div><img class="editor" src="http://127.0.0.1:5186/wordscut/screenshots/editor-hero.webp"/>`)
+await p.locator('img').evaluateAll(imgs=>Promise.all(imgs.map(i=>i.decode())))
+await p.screenshot({path:'public/wordscut/social-preview.png'});await b.close()
