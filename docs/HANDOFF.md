@@ -26,3 +26,23 @@ Owner subsequently deferred all DNS work and asked for GitHub Pages deployment
 only for now. No DNS record or custom-domain setting was changed. Initial public
 URL: https://awaismirza.github.io/wordscut-app-web/. There is deliberately no CNAME
 file, to avoid redirecting this working URL to the parked custom domain.
+
+## Validation before publication
+
+Initial website source commit: ce358b1a0deb0ff1c9224c7526558bca8068052b.
+- npm run lint: pass.
+- npm test: 7/7 pass.
+- npm run build: pass, approximately 280 KB JS / 89 KB gzip.
+- Clean npm ci against the regenerated lockfile: pass (213 packages); npm reports
+  13 inherited dependency advisories, not remediated by this migration.
+- Production browser matrix: 390/768/1280/1440/1920 × light/dark, all ten pass.
+  Root and legal routes, actual-size gallery, focus/contrast, menu, all images,
+  canonical/social metadata, old route aliases, contact CTA and console checked.
+- Read-only independent review of routing/base paths/SEO/Pages/privacy: no findings.
+- Browser checks fixed static/client canonical duplication and wait for lazy images
+  to finish loading before decoding. Licence text links use the project base.
+
+GitHub repository is public and Pages is enabled in workflow mode with no custom
+domain (`cname: null`). The next commit adds the workflow after Pages enablement.
+No DNS records were changed. Portfolio migration is committed/pushed to its review
+branch at 8345945, with live portfolio main unchanged while DNS is deferred.
